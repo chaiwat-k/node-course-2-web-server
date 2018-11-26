@@ -25,7 +25,7 @@ app.use((req,res,next)=>{
 // });
 app.use(express.static(__dirname + '/public'));
 
-// Root
+// Home
 app.get('/', (req, res) => {
     //res.send('<h1>Hello Express</h1>');
     res.render('home.hbs',{
@@ -37,8 +37,15 @@ app.get('/', (req, res) => {
 // About
 app.get('/about', (req, res) => {
     res.render('about.hbs',{
-        pageTitle: 'About Page'
+        pageTitle: 'About'
     });
+});
+
+// Project
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        pageTitle: 'Project'
+    })
 });
 
 // Bad
